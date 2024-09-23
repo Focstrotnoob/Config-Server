@@ -1,0 +1,18 @@
+spring:
+  management:
+    health:
+      livenessstate:
+        enabled: true
+      readinessstate:
+        enabled: true
+    endpoints:
+      web:
+        exposure:
+          include: '*'
+    zipkin:
+      tracing:
+        endpoint: http://172.17.0.1:9411/api/v2/spans
+    tracing:
+      sampling:
+        probability: 1.0
+
